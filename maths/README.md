@@ -30,3 +30,20 @@ The request accepts a json object with two attributes:
 }
 ```
 
+# Response
+
+The response is a json object which will have one of two attributes:
+- answer - the single value result for `avg`, `median` and `percentile`
+- answers - an array of values for `min` and `max`
+
+```json
+{
+  "answer": 2
+}
+
+or
+
+{
+  "answers": [1,2]
+}
+```
