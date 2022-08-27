@@ -35,6 +35,10 @@ func TestNew(t *testing.T) {
 			ver: "1.1.a",
 			err: InvalidElement,
 		},
+		"error - empty": {
+			ver: "",
+			err: InvalidVersion,
+		},
 	}
 
 	for tn, tc := range testcases {

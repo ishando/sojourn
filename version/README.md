@@ -29,7 +29,7 @@ GreaterThan(*Version) bool
 Compare(*Version) int
 ```
 
-`Compare` function return
+`Compare` function returns
 - -1 if the target Version is less than the provided Version
 - 0 if the target Version is equal to the provided Version
 - 1 if the target Version is greater than the provided Version

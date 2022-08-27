@@ -16,12 +16,17 @@ type Version struct {
 }
 
 var (
-	InvalidSeparatorUse = fmt.Errorf("Invalid Version string, possible missing element")
+	InvalidVersion = fmt.Errorf("Invalid Version string, cannot be an empty string")
 	InvalidElement = fmt.Errorf("Invalid Version string, non-numeric element")
+	InvalidSeparatorUse = fmt.Errorf("Invalid Version string, possible missing element")
 	InvalidIndex = fmt.Errorf("Version does not contain requested element")
 )
 
 func NewVersion(s string) (*Version, error) {
+	if s == "" {
+		return nil, InvalidVersion
+	}
+
 	v := &Version{
 		asString: s,
 		asArray:  []int{},
